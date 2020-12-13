@@ -51,4 +51,5 @@ gender_l = Dense(2,activation="softmax")(gender_l)
 model = Model(inputs=input,outputs=[age_l,gender_l])
 model.compile(optimizer="adam",loss=["mse","sparse_categorical_crossentropy"],metrics=['mae','accuracy'])
 save = model.fit(x_train,[y_train,y_train_2],validation_data=(x_test,[y_test,y_test_2]),epochs=50)
+model.save("model.h5")
 
