@@ -1,7 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from keras.models import load_model
 import cv2
-
+model_path = "./model.h5"
+model = load_model(model_path)
 output_path = ""
 img_path = ""
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
